@@ -1,0 +1,171 @@
+body * {
+    font-size: .8rem;
+}
+
+.link {
+    font-size: 12pt;
+}
+
+.link, .link:visited {
+    color: #0d6efd;
+}
+
+.link:hover {
+    color: orange;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.student-info {
+    width: 450px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 0.3em;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.student-info div.image-container {
+    position: absolute;
+    width: 80px;
+    height: 82px;
+    right: -13px;
+    bottom: -10px;
+} 
+
+.student-info div.image-container img {
+    width: 100%;
+    height: 100%;
+}
+
+table#timetable {
+    width: 100%;
+    table-layout: fixed;
+    text-align: center;
+}
+
+table#timetable th, td {
+    height: 35px;
+    border: 1px solid #666666;
+}
+
+table#timetable th:first-child, 
+                th:last-child, 
+                tfoot td:first-child, 
+                tfoot td:last-child {
+    background: transparent !important;
+    border: none !important;
+}
+
+table#timetable th,
+                tfoot td,
+                tbody td:first-child,
+                tbody td:last-child {
+    background: #73A2AC;
+    color: white;
+    font-weight: bold;
+}
+
+table#timetable tbody td:not(:first-child):not(:last-child):hover {
+    background: #E9D3FF;
+}
+ 
+td.course {
+    vertical-align: top;
+    text-align: left;
+    background: #FDF5C4;
+    padding-left: 2px;
+}
+
+td.course * {
+    cursor: default;
+}
+
+.course label {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.course-name {
+    font-weight: bold;
+}
+
+.course-info * {
+    font-size: 8.5pt;
+}
+
+#semester-title {
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+.loading-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: rgba(30, 30, 30, 0.1);
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.loading-modal-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-modal-container .spinner {
+    animation: spin 1s infinite linear;
+    -webkit-animation: spin 1s infinite linear;
+    border: 4px solid rgba(30, 30, 30, 0.2);
+    border-left: 4px solid orange;
+    border-radius: 50%;
+    height: 50px;
+    margin-bottom: 10px;
+    width: 50px;
+}
+
+.loading-modal-container .text {
+    font-size: 12pt;
+}
+
+.loading-modal-container .text:after {
+    content: "Đang lấy dữ liệu";
+    animation: load 3s infinite linear;
+    -webkit-animation: load 3s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes load {
+    0% {
+        content: "Đang lấy dữ liệu";
+    }
+    33% {
+        content: "Đang lấy dữ liệu.";
+    }
+    67% {
+        content: "Đang lấy dữ liệu..";
+    }
+    100% {
+        content: "Đang lấy dữ liệu..."
+    }
+}
